@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+    <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/form.js"></script>
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <div class="page-header">
+        <h1>Build Form</h1>
+    </div>
+    <div class="container-fluid" ng-controller="elementCntrl">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-1">
+                <h2>Select elements from here:</h2>
+                <div ng-repeat="element in listOfElements" class="element-list">
+                    <!-- <input type="{{element.type}}" class="{{element.class}}" placeholder="{{element.placeholder}}" ng-click="addElement($index)" ng-mouseover="catchMouse(true)" ng-mouseleave="catchMouse(false)">-->
+
+                    <div ng-click='addElement($index)' ng-mouseover='catchMouse(true)' ng-mouseleave='catchMouse(false)' ng-bind-html="renderHtml(element)">{{renderHtml(element)}} </div>
+
+
+                </div>
+
+
+            </div>
+            <div class="col-md-2">
+                <div class="direction"><span class="glyphicon glyphicon-arrow-right" ng-show="showArrow"></span></div>
+            </div>
+            <div class="col-md-4">
+                <h3>Please enter form title here:</h3>
+                <input type="text" id="formTitle" placeholder="Form Title" class="form-control"></input>
+                <br/>
+                <div ng-repeat="element in listOfFormElements track by $index" class="list">
+                    <div ng-bind-html="renderHtml(element)">{{renderHtml(element)}} </div>
+                    <div class="editOptions">
+                        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true" ng-click="goUp($index)"></span>
+                        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" ng-click="goDown($index)"></span>
+                        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true" ng-click="removeElement($index)"></span>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-6">
+                <button class="btn btn-primary" ng-click='sendForm()'>Submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

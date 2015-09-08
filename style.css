@@ -1,0 +1,45 @@
+.form-control {
+    cursor: pointer;
+}
+
+.form-control:hover {
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #ccc;
+    background-color: #666;
+}
+
+.elemet-list {
+    padding: 10px;
+}
+
+.element-list input{
+    margin: 5px;
+    margin-bottom: 10px;
+    border-radius: 0px;
+    color: #fff;
+}
+
+span.glyphicon-arrow-right {
+    font-size: 2em;
+    color: #999;
+}
+
+.direction{
+    text-align: center;
+    margin-top: 30vh;
+}
+
+.formElements {
+
+}
+<!--.list{
+    position: relative;
+}
+.list .editOptions { position: absolute;
+    
+  
+}-->
+.edit-options{
+    font-size: 1.5em;
+}
